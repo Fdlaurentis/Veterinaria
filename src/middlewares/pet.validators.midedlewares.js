@@ -30,5 +30,6 @@ exports.petValidators = [
     .withMessage("El campo esterelizado debe ser una cadena")
     .notEmpty()
     .withMessage("El campo esterelizado no debe estar vacio"),
+  body("userId").isNumeric().notEmpty().withMessage("El ID del duelo no puede estar vacio"),
   checkValidations
 ];

@@ -12,7 +12,6 @@ const { Users } = require("../models/users.model");
 const { Pets } = require("../models/pets.models");
 const { notifyRegister } = require("../utils/mailSender");
 
-
 dotenv.config({ path: "./config.env" });
 
 // Create Usuario
@@ -100,5 +99,22 @@ exports.getAllUsers = catchAsync(async (req, res) => {
   res.status(200).json({
     status: "success",
     data: { users }
+  });
+});
+
+// Get pet for User
+exports.getUser = catchAsync(async (req, res) => {
+  const petUser = await Users.findOne({
+    attributes: { exclude: ["password", "createdAt", "updatedAt"] },
+    where: {
+      status: "active",
+      role: "client"
+    },
+    include: [{ model: Pets }]
+  });
+
+  res.status(200).json({
+    status: "success",
+    data: { petUser }
   });
 });

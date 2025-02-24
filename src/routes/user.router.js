@@ -5,7 +5,8 @@ const {
   createUser,
   updatePassword,
   deleteUser,
-  getAllUsers
+  getAllUsers,
+  getUser
 } = require("../controllers/user.controller");
 
 //MIDDLEWARES
@@ -24,6 +25,8 @@ router.use(protectSession);
 router.post("/create", protectAdmin, userValidators, createUser);
 
 router.get("/", protectAdmin, getAllUsers);
+
+router.get("/:id", protectAdmin, getUser);
 
 router.delete("/:id", protectAdmin, validExistUserById, deleteUser);
 
