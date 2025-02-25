@@ -1,6 +1,7 @@
 # Documentación básica del sistema
 
 **Funcionalidades principales:**
+
 **_1.- Usuarios y roles:_**
 
 - Los usuarios se registran con un rol específico (admin, doctor, cliente).
@@ -30,3 +31,7 @@
 **_5.- Recetas:_**
 
 - Los doctores pueden generar recetas para las mascotas después de una consulta.
+
+**Base de Datos con sus relaciones:**
+[Link de base de datos](https://dbdiagram.io/d/636a66bdc9abfc6111711b76)
+![Imagen de referencia de las relaciones de Base de Datos](https://drive.google.com/file/d/181QDPjoov1lfM1z1QNEwRQkMDDNLf4hg/view?usp=drive_link)
